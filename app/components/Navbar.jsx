@@ -12,7 +12,6 @@ const Navbar = () => {
       {/* Desktop Navigation */}
       <div className="hidden md:flex gap-x-8 font-bold text-xl p-4 justify-around shadow-md shadow-red-300">
         <Link href="/">News</Link>
-        <Link href="/general">General</Link>
         <Link href="/sports">Sports</Link>
         <Link href="/science">Science</Link>
         <Link href="/business">Business</Link>
@@ -53,12 +52,6 @@ const Navbar = () => {
           navOpen ? "flex" : "hidden"
         } flex-col items-center gap-y-6 font-bold text-xl p-4 shadow-lg shadow-red-300 md:hidden rounded-br-md rounded-bl-md`}
       >
-        <Link href="/" onClick={toggleNav}>
-          News
-        </Link>
-        <Link href="/general" onClick={toggleNav}>
-          General
-        </Link>
         <Link href="/sports" onClick={toggleNav}>
           Sports
         </Link>
