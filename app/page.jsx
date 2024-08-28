@@ -9,7 +9,7 @@ const Home = async () => {
 
   return (
     <>
-      <div className="flex m-auto md:w-[80vw] justify-center md:justify-between  flex-wrap mt-10">
+      <div className="flex m-auto md:w-[80vw] justify-center md:justify-between p-4 flex-wrap mt-10">
         {news.data.map((d) => {
           return (
             <News

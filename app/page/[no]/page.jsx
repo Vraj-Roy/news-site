@@ -10,7 +10,7 @@ const Home = async ({ params }) => {
 
   return (
     <>
-      <div className="flex m-auto md:w-[70vw] justify-center md:justify-between flex-wrap mt-10">
+      <div className="flex m-auto md:w-[80vw] justify-center p-4 md:justify-between flex-wrap mt-10">
         {news.data.map((d) => {
           return (
             <News
@@ -27,7 +27,7 @@ const Home = async ({ params }) => {
           );
         })}
       </div>
-      <div className="flex justify-between md:w-[70vw] m-auto mt-10">
+      <div className="flex justify-between md:w-[80vw] m-auto mt-10">
         {params.no > 1 ? (
           <Link href={`/page/${parseInt(params.no) - 1}`}>
             <div className="btn bg-black text-white p-4 text-lg  w-fit rounded    mt-4">

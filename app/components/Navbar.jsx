@@ -51,7 +51,7 @@ const Navbar = () => {
       <div
         className={`${
           navOpen ? "flex" : "hidden"
-        } flex-col items-center gap-y-6 font-bold text-xl p-4 shadow-md shadow-red-300 md:hidden`}
+        } flex-col items-center gap-y-6 font-bold text-xl p-4 shadow-lg shadow-red-300 md:hidden rounded-br-md rounded-bl-md`}
       >
         <Link href="/" onClick={toggleNav}>
           News
