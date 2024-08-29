@@ -5,9 +5,11 @@ import { Suspense } from "react";
 import Loading from "@/app/loading";
 
 const Home = async ({ params }) => {
+  const apiKey = process.env.NEXT_PUBLIC_API_KEY;
+
   try {
     const res = await fetch(
-      `https://api.thenewsapi.com/v1/news/top?api_token=5BRLLwB0MnFhmhWNVp8Wm9RzUR8vUYCD5OREYUon&locale=us&limit=3&categories=${params.category}&page=${params.no}`
+      `https://api.thenewsapi.com/v1/news/top?api_token=${apiKey}&locale=us&limit=3&categories=${params.category}&page=${params.no}`
     );
 
     if (!res.ok) {

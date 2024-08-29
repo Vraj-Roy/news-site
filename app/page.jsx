@@ -2,8 +2,10 @@ import { Suspense } from "react";
 import News from "./components/News";
 import Loading from "./loading";
 const Home = async () => {
+  const apiKey = process.env.NEXT_PUBLIC_API_KEY;
+
   const res = await fetch(
-    "https://api.thenewsapi.com/v1/news/top?api_token=5BRLLwB0MnFhmhWNVp8Wm9RzUR8vUYCD5OREYUon&locale=us&limit=3&page=1"
+    `https://api.thenewsapi.com/v1/news/top?api_token=${apiKey}&locale=us&limit=3&page=1`
   );
   const news = await res.json();
 
