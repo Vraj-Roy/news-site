@@ -1,12 +1,21 @@
 import Link from "next/link";
 import News from "@/app/components/News";
+import NewsSkeleton from "../Skeletons/NewsSkeleton";
 
 const Home = async ({ params }) => {
   const res = await fetch(
     `https://api.thenewsapi.com/v1/news/top?api_token=5BRLLwB0MnFhmhWNVp8Wm9RzUR8vUYCD5OREYUon&locale=us&limit=3&categories=${params.category}`
   );
   const news = await res.json();
-
+  if (!res.ok) {
+    return (
+      <div className="flex m-auto md:w-[80vw] justify-center md:justify-between p-4 flex-wrap mt-10">
+        <NewsSkeleton />
+        <NewsSkeleton />
+        <NewsSkeleton />
+      </div>
+    );
+  }
   return (
     <>
       <div className="flex m-auto md:w-[80vw] justify-center p-4 md:justify-between flex-wrap mt-10">
