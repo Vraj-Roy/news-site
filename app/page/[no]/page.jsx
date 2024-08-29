@@ -2,6 +2,8 @@ import Image from "next/image";
 import News from "@/app/components/News";
 import Link from "next/link";
 import NewsSkeleton from "@/app/Skeletons/NewsSkeleton";
+import Loading from "@/app/loading";
+import { Suspense } from "react";
 
 const Home = async ({ params }) => {
   const res = await fetch(
@@ -19,23 +21,25 @@ const Home = async ({ params }) => {
   }
   return (
     <>
-      <div className="flex m-auto md:w-[80vw] justify-center p-4 md:justify-between flex-wrap mt-10">
-        {news.data.map((d) => {
-          return (
-            <News
-              key={d.uuid}
-              uuid
-              title={d.title}
-              description={d.description}
-              snippet={d.snippet}
-              url={d.url}
-              image_url={d.image_url}
-              published_at={d.published_at}
-              source={d.source}
-            />
-          );
-        })}
-      </div>
+      <Suspense fallback={<Loading />}>
+        <div className="flex m-auto md:w-[80vw] justify-center p-4 md:justify-between flex-wrap mt-10">
+          {news.data.map((d) => {
+            return (
+              <News
+                key={d.uuid}
+                uuid
+                title={d.title}
+                description={d.description}
+                snippet={d.snippet}
+                url={d.url}
+                image_url={d.image_url}
+                published_at={d.published_at}
+                source={d.source}
+              />
+            );
+          })}
+        </div>
+      </Suspense>
       <div className="flex justify-between md:w-[80vw] m-auto mt-10">
         {params.no > 1 ? (
           <Link href={`/page/${parseInt(params.no) - 1}`}>

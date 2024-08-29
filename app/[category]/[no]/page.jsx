@@ -2,7 +2,8 @@ import Image from "next/image";
 import News from "@/app/components/News";
 import Link from "next/link";
 import { Suspense } from "react";
-import NewsSkeleton from "../../Skeletons/NewsSkeleton";
+import Loading from "@/app/loading";
+
 const Home = async ({ params }) => {
   try {
     const res = await fetch(
@@ -18,19 +19,14 @@ const Home = async ({ params }) => {
     const news = await res.json();
 
     // Ensure `news.data` exists and is an array
-    if (!res.ok) {
-      return (
-        <div className="flex m-auto md:w-[80vw] justify-center md:justify-between p-4 flex-wrap mt-10">
-          <NewsSkeleton />
-          <NewsSkeleton />
-          <NewsSkeleton />
-        </div>
-      );
+    if (!news.data || !Array.isArray(news.data)) {
+      console.error("Invalid news data:", news);
+      return <div>No news available.</div>;
     }
 
     return (
       <>
-        <Suspense fallback="loading">
+        <Suspense fallback={<Loading />}>
           <div className="flex m-auto md:w-[80vw] justify-center p-4 md:justify-between flex-wrap mt-10">
             {news.data.map((d) => {
               return (
