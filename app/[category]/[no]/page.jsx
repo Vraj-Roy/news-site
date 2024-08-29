@@ -5,7 +5,7 @@ import { Suspense } from "react";
 import Loading from "@/app/loading";
 
 const Home = async ({ params }) => {
-  const apiKey = process.env.NEXT_PUBLIC_API_KEY;
+  const apiKey = process.env.NEWS_API_KEY;
 
   try {
     const res = await fetch(
