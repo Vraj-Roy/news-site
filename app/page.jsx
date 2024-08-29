@@ -2,6 +2,8 @@ import { Suspense } from "react";
 import News from "./components/News";
 import Loading from "./loading";
 import Link from "next/link";
+import ThemeToggle from "./components/ThemeLogic";
+
 const Home = async () => {
   const apiKey = process.env.NEWS_API_KEY;
 

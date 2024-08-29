@@ -2,6 +2,8 @@
 import Link from "next/link";
 import React, { useState } from "react";
 
+import ThemeToggle from "./ThemeLogic";
+
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
 
@@ -20,6 +22,7 @@ const Navbar = () => {
         <Link href="/tech">Tech</Link>
         <Link href="/politics">Politics</Link>
         <Link href="/travel">Travel</Link>
+        <ThemeToggle />
       </div>
 
       {/* Mobile Navigation Toggle */}
@@ -27,22 +30,25 @@ const Navbar = () => {
         <Link href={"/"}>
           <span className="text-xl font-bold">News</span>
         </Link>
-        <div className="space-y-2 cursor-pointer" onClick={toggleNav}>
-          <span
-            className={`block w-8    h-0.5 bg-black transition-transform ${
-              navOpen ? "transform rotate-[45deg] translate-y-2" : ""
-            }`}
-          ></span>
-          <span
-            className={`block w-8    h-0.5 bg-black transition-opacity ${
-              navOpen ? "opacity-0" : ""
-            }`}
-          ></span>
-          <span
-            className={`block w-8    h-0.5 bg-black transition-transform ${
-              navOpen ? "transform -rotate-45 -translate-y-2" : ""
-            }`}
-          ></span>
+        <div className="flex items-center gap-x-2">
+          <ThemeToggle />
+          <div className="space-y-2 cursor-pointer" onClick={toggleNav}>
+            <span
+              className={`block w-8 navSpan    h-0.5 bg-black transition-transform ${
+                navOpen ? "transform rotate-45 translate-y-2" : ""
+              }`}
+            ></span>
+            <span
+              className={`block w-8 navSpan    h-0.5 bg-black transition-opacity ${
+                navOpen ? "opacity-0" : ""
+              }`}
+            ></span>
+            <span
+              className={`block w-8 navSpan    h-0.5 bg-black transition-transform ${
+                navOpen ? "transform -rotate-45 -translate-y-3" : ""
+              }`}
+            ></span>
+          </div>
         </div>
       </div>
 

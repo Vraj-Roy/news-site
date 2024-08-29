@@ -42,10 +42,10 @@ const Home = async ({ params }) => {
           })}
         </div>
       </Suspense>
-      <div className="flex justify-between md:w-[80vw] m-auto mt-10">
+      <div className="flex justify-between md:w-[80vw] md:m-auto mt-10 m-4 text-sm md:text-lg">
         {params.no > 1 ? (
           <Link href={`/page/${parseInt(params.no) - 1}`}>
-            <div className="btn bg-black text-white p-4 text-lg  w-fit rounded    mt-4">
+            <div className="btn bg-black text-white p-4 w-fit rounded mt-4">
               Previous Page
             </div>
           </Link>
@@ -53,7 +53,7 @@ const Home = async ({ params }) => {
           <div></div>
         )}
         <Link href={`/page/${parseInt(params.no) + 1}`}>
-          <div className="btn bg-black text-white p-4 text-lg  w-fit rounded    mt-4">
+          <div className="btn bg-black text-white p-4 w-fit rounded mt-4">
             Next Page
           </div>
         </Link>
