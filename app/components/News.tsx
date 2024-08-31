@@ -12,7 +12,7 @@ const News = ({
   published_at,
 }: any) => {
   return (
-    <div className="border-2 w-96 shadow-lg shadow-blue-300 rounded-xl relative p-4 my-2">
+    <div className="border-2 w-96 shadow-lg shadow-blue-300 rounded-xl  relative p-4 p-4 my-2">
       <div key={uuid}>
         <div className="font-extrabold text-2xl line-clamp-2 ">{title}</div>
         <div className="line-clamp-3">{description}</div>
