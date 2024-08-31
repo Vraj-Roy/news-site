@@ -16,7 +16,7 @@ const News = ({
       <div key={uuid}>
         <div className="font-extrabold text-2xl line-clamp-2 ">{title}</div>
         <div className="line-clamp-3">{description}</div>
-        <div className="italic text-right font-bold text-lg">
+        <div className="italic text-right font-bold text-md bg-black w-fit text-white mr-0 ml-auto my-2">
           {"-"}
           {source}
         </div>
