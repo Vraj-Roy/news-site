@@ -34,7 +34,7 @@ const ThemeToggle = () => {
             width={30}
             height={30}
             className="transition-all"
-            src="/light.svg"
+            src="/moon.png"
             alt=""
           />
         )}
@@ -43,7 +43,7 @@ const ThemeToggle = () => {
             width={30}
             height={30}
             className="transition-all"
-            src="dark.svg"
+            src="/sun.png"
             alt=""
           />
         )}
