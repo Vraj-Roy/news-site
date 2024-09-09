@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <div>
       {/* Desktop Navigation */}
-      <div className="hidden md:flex gap-x-8 font-bold text-xl p-4 justify-around shadow-md shadow-red-300">
+      <div className="hidden md:flex gap-x-8 font-bold text-xl p-4 justify-around shadow-md ">
         <Link href="/">News</Link>
         <Link href="/sports">Sports</Link>
         <Link href="/science">Science</Link>
