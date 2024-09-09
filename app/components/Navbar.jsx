@@ -56,7 +56,7 @@ const Navbar = () => {
       <div
         className={`${
           navOpen ? "flex" : "hidden"
-        } flex-col items-center gap-y-6 font-bold text-xl p-4 shadow-lg shadow-red-300 md:hidden rounded-br-md rounded-bl-md`}
+        } flex-col items-center gap-y-6 font-bold text-xl p-4 shadow-lg  md:hidden rounded-br-md rounded-bl-md transition-all  `}
       >
         <Link href="/sports" onClick={toggleNav}>
           Sports
