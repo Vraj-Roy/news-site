@@ -3,7 +3,7 @@ import NewsSkeleton from "./Skeletons/NewsSkeleton"; // Create a skeleton compon
 
 export default function Loading() {
   return (
-    <div className="flex m-auto md:w-[80vw] justify-center md:justify-between p-4 flex-wrap mt-10">
+    <div className="flex m-auto md:w-[80vw] justify-center md:justify-between p-4 flex-wrap mt-10 pb-10">
       <NewsSkeleton />
       <NewsSkeleton />
       <NewsSkeleton />
